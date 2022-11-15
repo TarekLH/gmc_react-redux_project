@@ -2,12 +2,13 @@ import React, {useState} from "react";
 import "../Styles/Style.css"
 
 const Task = ({id, title}) => {
-    const [isChecked, setIsChecked] = useState(false);
-    const [Delete, setDelete] = useState(false);
 
+    const [isChecked, setIsChecked] = useState(false);
     const CheckedTask = () => {
         setIsChecked(current => !current)
     }
+
+    const [Delete, setDelete] = useState(false);
     const DeleteTask = () => {
         console.log("hello")
         setDelete(current => !current)

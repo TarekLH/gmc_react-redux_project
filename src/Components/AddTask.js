@@ -1,14 +1,29 @@
 import React, {useState} from "react";
 
+//* Redux stuff
+import { useDispatch } from 'react-redux'
+//* import action to dispatch
+import { addTodo } from "../Redux/Slices/todoSlice";
+
 
 
 const AddTask = () => {
 
     const[taskContent, settaskContent] = useState('')
 
+    const dispatch = useDispatch()
+
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('User\'s Task content: ' + taskContent)
+
+        //* Dispatching the action 
+        dispatch(
+            addTodo({
+                //* Pass in the payloads (title)
+                title: taskContent,
+            })
+        )
     }
 
     return (
