@@ -1,0 +1,129 @@
+/*Style for AddTask component  */
+
+header {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #6B7280;
+    margin-bottom: 1rem ;
+}
+
+.newTaskForm {
+    display: flex;
+}
+
+input, button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.newTaskInp {
+    flex: 1 1 0%; /*approfondire*/
+    background-color: #1F2937;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-right: 1rem ;
+    color: #EEE;
+    font-size: 1.25rem;
+}
+.newTaskInp::placeholder {
+    color: #6B7280 ;
+}
+
+.newTaskSubmit {
+    color: #EC4899;
+    font-size: 1.25rem;
+    font-weight: 700;
+    background-image: linear-gradient(to right, #EC4899, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.newTaskSubmit:hover {
+    opacity: 0.8;
+}
+.newTaskSubmit:active {
+    opacity: 0.6;
+}
+
+
+/*Style for ListTask component  */
+
+main {
+    flex: 1 1 0%;
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.taskList {
+    padding: 1rem;
+}
+.taskList h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #6B7280;
+    margin-bottom: 1rem;
+}
+
+
+/*Style for Task component  */
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    background-color: #111827;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+.task .content .text {
+    color: #EEE;
+    font-size: 1.125rem;
+    width: 100%;
+    display: block;
+    transition: 0.4s;
+}
+.task .content .text:not(:read-only) {
+    color: #EC4899; 
+}
+
+.task .actions {
+    display: flex;
+    margin: 0 -0.5rem;
+}
+
+.task .actions button {
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.4s;
+    color: gray;
+}
+
+.task .actions button:hover {
+    opacity: 0.8;
+}
+.task .actions button:active {
+    opacity: 0.6;
+}
+
+.task .actions .edit {
+    background-image: linear-gradient(to right, #EC4899, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.task .actions .delete {
+    color: crimson;
+}
