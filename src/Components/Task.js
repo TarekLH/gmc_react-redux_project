@@ -1,21 +1,28 @@
-import React, {useState} from "react";
-import "../Styles/Style.css"
+import React from "react";
+//* Redux stuff
+import { useDispatch } from "react-redux"; 
+//* Import the actions
+import { toggleComplete, deleteTodo } from "../Redux/Slices/todoSlice"; 
 
-const Task = ({id, title}) => {
+const Task = ({id, title, isChecked}) => {
 
-    const [isChecked, setIsChecked] = useState(false);
+    const dispatch = useDispatch()
+    //* CheckedTask func in charge to toggle our action onClick 
     const CheckedTask = () => {
-        setIsChecked(current => !current)
+        dispatch(
+            //* Passing the payloads to the action
+            toggleComplete({id: id, isChecked: !isChecked})
+        )
     }
 
-    const [Delete, setDelete] = useState(false);
     const DeleteTask = () => {
-        console.log("hello")
-        setDelete(current => !current)
+        dispatch(
+            deleteTodo({id: id})
+        )
     }
 
     return (
-        !Delete && <div key={id} className="task">
+        <div key={id} className="task">
             <div className="content">
                 <input 
                     style={{textDecoration: isChecked ? "line-through" : "none"}} 

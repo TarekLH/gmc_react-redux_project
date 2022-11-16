@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 //* Redux stuff
 import { useDispatch } from 'react-redux'
-//* import action to dispatch
+//* Import action to dispatch
 import { addTodo } from "../Redux/Slices/todoSlice";
 
 
@@ -20,7 +20,7 @@ const AddTask = () => {
         //* Dispatching the action 
         dispatch(
             addTodo({
-                //* Pass in the payloads (title)
+                //* Pass in the payload (title)
                 title: taskContent,
             })
         )
@@ -41,7 +41,7 @@ const AddTask = () => {
                 <input 
                     type="submit"
                     className="newTaskSubmit" 
-                    value="Add task"
+                    value="Add Task"
                 />
             </form>
         </header>
