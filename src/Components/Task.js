@@ -1,10 +1,14 @@
 import React from "react";
+//* React icons
+import { FiEdit } from 'react-icons/fi'
 //* Redux stuff
 import { useDispatch } from "react-redux"; 
 //* Import the actions
 import { toggleComplete, deleteTodo } from "../Redux/Slices/todoSlice"; 
 
-const Task = ({id, title, isChecked}) => {
+
+
+const Task = ({id, title, isChecked, editFormLayout, handleEdit}) => {
 
     const dispatch = useDispatch()
     //* CheckedTask func in charge to toggle our action onClick 
@@ -29,12 +33,17 @@ const Task = ({id, title, isChecked}) => {
                     type="text" 
                     className="text" 
                     value={title} 
-                    readonly
+                    readOnly
                 />
             </div>
             <div className="actions">
-                <button onClick={CheckedTask} className="check">Checked</button>
-                <button onClick={DeleteTask} className="delete">Delete</button>
+                {editFormLayout === false && (
+                    <>
+                        <button onClick={handleEdit} style={{lineHeight: "2px"}} type="button"><FiEdit/></button>
+                        <button onClick={CheckedTask} className="check">Checked</button>
+                        <button onClick={DeleteTask} className="delete">Delete</button>
+                    </>
+                )}
             </div>
         </div>
     )
